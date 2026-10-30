@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="オールドレンズのカビ・くもり・絞りの油染み・バルサム切れの清掃を承ります。基本料金3,000円（税込価格3,300円）、納期の目安2週間。静岡県富士市の工房で1本ずつ作業します。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Repair Factory Fuji Base｜オールドレンズの分解清掃">
+<meta property="og:description" content="オールドレンズのカビ・くもり・絞りの油染み・バルサム切れの清掃を承ります。基本料金3,000円（税込価格3,300円）、納期の目安2週間。静岡県富士市の工房で1本ずつ作業します。">
+<meta property="og:url" content="https://saizokg.github.io/fuji-base/">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Repair Factory Fuji Base｜オールドレンズの分解清掃</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@500;600;700&display=swap">
+<style>
+/* Layout: 左揃えの1カラム（最大960px）。料金表＝計算できる表を主役に、ほかの節は白地で静かに。 */
+:root {
+  --bg: #fbfcfe;
+  --surface: #ffffff;
+  --line: #e2e8f1;
+  --text: #121a2b;
+  --muted: #536076;
+  --accent: #2160d8;
+  --accent-ink: #ffffff;
+  --accent-soft: #eaf1fe;
+  --photo: #e6e9ee;
+  --photo-ink: #6b7484;
+  --tag: #a85a07;
+  --font-display: "Poppins", "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --font-body: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --s1: 8px; --s2: 16px; --s3: 24px; --s4: 32px; --s6: 48px; --s8: 64px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d131e; --surface: #141c2a; --line: #26324a; --text: #e8edf6; --muted: #9ba7bb;
+    --accent: #6ea2ff; --accent-ink: #0b1220; --accent-soft: #172744;
+    --photo: #1d2636; --photo-ink: #8d98ab; --tag: #f0b25e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d131e; --surface: #141c2a; --line: #26324a; --text: #e8edf6; --muted: #9ba7bb;
+  --accent: #6ea2ff; --accent-ink: #0b1220; --accent-soft: #172744;
+  --photo: #1d2636; --photo-ink: #8d98ab; --tag: #f0b25e;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 960px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.35; text-wrap: balance; word-break: auto-phrase; margin: 0; font-weight: 700; }
+h2 { font-size: 24px; }
+h3 { font-size: 16px; }
+p { margin: 0; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.num { font-family: var(--font-display); font-variant-numeric: tabular-nums; }
+
+/* Header */
+.site-head { padding-block: var(--s3); border-bottom: 1px solid var(--line); }
+.site-head .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s2); }
+.brand { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s1); }
+.brand small { color: var(--muted); font-size: 12px; }
+.brand strong { font-size: 18px; font-weight: 700; }
+.brand:has(.brand-main) { flex-direction: column; align-items: flex-start; gap: 0; line-height: 1.2; }
+.brand .brand-sub { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.brand .brand-main { font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: 0.02em; }
+.head-nav { display: flex; gap: var(--s2); font-size: 14px; }
+.head-nav a { color: var(--text); text-decoration: none; padding-block: 10px; }
+.head-nav a:hover { color: var(--accent); }
+
+/* Sections */
+section { padding-block: var(--s8); border-bottom: 1px solid var(--line); }
+section:last-of-type { border-bottom: 0; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s1) var(--s2); margin-bottom: var(--s4); }
+.lead { color: var(--muted); max-width: 40em; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 var(--s3); border-radius: 8px;
+  font-weight: 700; font-size: 16px; text-decoration: none;
+  border: 1.5px solid var(--accent);
+}
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { filter: brightness(1.08); }
+.btn-ghost { background: transparent; color: var(--accent); }
+.btn-ghost:hover { background: var(--accent-soft); }
+
+/* Hero：淡々と、何をする店か・基本の条件だけ */
+.hero { padding-block: var(--s8); }
+.hero-title { font-size: 36px; line-height: 1.3; }
+.hero-sub { margin-top: var(--s2); color: var(--muted); max-width: 44em; }
+.hero-facts { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s6); margin: var(--s4) 0 0; padding-top: var(--s3); border-top: 1px solid var(--line); }
+.hero-facts dt { font-size: 13px; color: var(--muted); }
+.hero-facts dd { margin: 0; font-weight: 700; }
+.hero-facts dd .num { font-size: 24px; font-weight: 600; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: var(--s2); margin-top: var(--s4); }
+.tax { font-size: 12px; font-weight: 500; color: var(--muted); margin-left: 2px; white-space: nowrap; }
+.p-row .price .tax, .p-total .t-val .tax, .ex .sum .tax, .promise .stamp .tax { display: block; margin-left: 0; font-family: var(--font-body); }
+
+/* Symptoms */
+.symptoms { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s2); }
+.symptom { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: var(--s3); display: grid; gap: var(--s1); align-content: start; min-width: 0; }
+.symptom svg { width: 40px; height: 40px; color: var(--accent); }
+.symptom .add { font-size: 14px; color: var(--muted); }
+.symptom .add .num { font-size: 20px; color: var(--text); font-weight: 600; }
+.symptom .sub { font-size: 13px; color: var(--muted); }
+.scope-note { margin-top: var(--s3); font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; align-items: center; gap: var(--s1); }
+
+/* Price table (主役) */
+#price { background: var(--surface); margin-left: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px))); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.price-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--s6); align-items: start; }
+.price-table { border: 2px solid var(--text); border-radius: 12px; overflow: hidden; min-width: 0; }
+.p-row { display: flex; align-items: center; gap: var(--s2); padding: var(--s2) var(--s3); border-top: 1px solid var(--line); min-height: 72px; }
+.p-row:first-child { border-top: 0; }
+.p-row .name { flex: 1; min-width: 0; font-weight: 500; }
+.p-row .name small { display: block; font-size: 13px; color: var(--muted); font-weight: 400; }
+.p-row .price { font-size: 28px; font-weight: 600; white-space: nowrap; }
+.p-row .price .yen { font-size: 16px; font-family: var(--font-body); font-weight: 700; margin-left: 2px; }
+.p-row.base { background: var(--accent-soft); }
+.p-row.base .price { color: var(--accent); }
+.p-row.base .always, .sec-head .always { font-size: 12px; font-weight: 700; color: var(--accent); border: 1.5px solid var(--accent); border-radius: 4px; padding: 0 6px; white-space: nowrap; }
+label.p-row { cursor: pointer; }
+label.p-row:hover { background: var(--accent-soft); }
+.p-row input[type="checkbox"] { width: 24px; height: 24px; margin: 0; accent-color: var(--accent); flex: none; }
+.p-total { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s1) var(--s2); padding: var(--s3); background: var(--text); color: var(--bg); }
+.p-total .t-label { font-weight: 700; }
+.p-total .t-label small { display: block; font-weight: 400; font-size: 13px; opacity: .8; }
+.p-total .t-val { font-size: 40px; font-weight: 600; line-height: 1.1; }
+.p-total .t-val .yen { font-size: 18px; font-family: var(--font-body); font-weight: 700; margin-left: 2px; }
+.price-notes { margin-top: var(--s2); font-size: 14px; color: var(--muted); display: grid; gap: var(--s1); }
+.price-notes p { display: flex; flex-wrap: wrap; align-items: center; gap: 4px var(--s1); }
+
+.others h3 { margin-bottom: var(--s2); }
+.others dl { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.others .o-row { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: var(--s1); align-items: center; padding-block: 12px; border-bottom: 1px solid var(--line); font-size: 14px; }
+.others dt { min-width: 0; }
+.others dd { margin: 0; }
+
+/* 特定商取引法に基づく表記：送料とお支払いの表と同じ作りで、見出しの幅だけ広く */
+.legal dl { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.legal .o-row { display: grid; grid-template-columns: 11em minmax(0, 1fr); gap: var(--s1); align-items: start; padding-block: 12px; border-bottom: 1px solid var(--line); font-size: 14px; }
+.legal dt { min-width: 0; font-weight: 700; word-break: keep-all; }
+.legal dd { margin: 0; }
+@media (max-width: 560px) { .legal .o-row { grid-template-columns: minmax(0, 1fr); gap: 2px; } }
+
+/* Examples */
+.examples { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s2); }
+.ex { border: 1px solid var(--line); border-radius: 10px; padding: var(--s3); background: var(--surface); display: grid; gap: var(--s1); align-content: start; min-width: 0; }
+.ex .what { font-weight: 700; }
+.ex .calc { font-size: 14px; color: var(--muted); }
+.ex .sum { font-size: 32px; font-weight: 600; color: var(--accent); line-height: 1.2; }
+.ex .sum .yen { font-size: 16px; font-family: var(--font-body); font-weight: 700; margin-left: 2px; }
+
+/* Promise */
+.promise { display: grid; grid-template-columns: auto 1fr; gap: var(--s4); align-items: center; border: 2px solid var(--accent); border-radius: 12px; padding: var(--s4); background: var(--accent-soft); }
+.promise .stamp { text-align: center; }
+.promise .stamp .small { font-size: 13px; font-weight: 700; color: var(--accent); }
+.promise .stamp .num { display: block; font-size: 44px; font-weight: 600; color: var(--accent); line-height: 1.1; }
+.promise .stamp .yen { font-size: 16px; font-weight: 700; color: var(--accent); }
+.promise h3 { font-size: 18px; margin-bottom: var(--s1); }
+.promise-title { margin-bottom: var(--s3); }
+.promises { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); }
+.promise .stamp { min-width: 7em; }
+
+/* Flow */
+.flow { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: step; }
+.flow li { counter-increment: step; display: grid; grid-template-columns: 40px 1fr; gap: var(--s2); padding-block: var(--s2); border-bottom: 1px solid var(--line); align-items: start; }
+.flow li:first-child { border-top: 1px solid var(--line); }
+.flow li::before { content: counter(step); font-family: var(--font-display); font-weight: 600; width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--accent); color: var(--accent); display: grid; place-items: center; font-size: 14px; }
+.flow .step-body { min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px var(--s1); padding-top: 3px; }
+.flow .step-body small { flex-basis: 100%; color: var(--muted); font-size: 14px; }
+
+/* About */
+.facts { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--s2); }
+.facts li { padding-left: var(--s3); position: relative; }
+.facts li::before { content: ""; position: absolute; left: 4px; top: 0.75em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
+/* FAQ */
+.faq { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; list-style: none; padding-block: var(--s2); font-weight: 700; display: flex; justify-content: space-between; gap: var(--s2); min-height: 44px; align-items: center; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--font-display); color: var(--accent); font-size: 20px; line-height: 1; }
+.faq details[open] summary::after { content: "−"; }
+.faq .ans { padding-bottom: var(--s3); color: var(--muted); display: flex; flex-wrap: wrap; align-items: center; gap: 4px var(--s1); }
+
+/* Contact */
+.contact-box { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding: var(--s4) var(--s3); display: grid; gap: var(--s3); }
+.contact-box form { display: grid; gap: var(--s2); }
+.field { display: grid; gap: 4px; }
+.field label, .field legend { font-size: 14px; font-weight: 700; }
+.field input[type="text"], .field textarea {
+  width: 100%; min-height: 44px; font: inherit; color: var(--text); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px;
+}
+.field textarea { min-height: 112px; resize: vertical; }
+fieldset.field { border: 0; padding: 0; margin: 0; }
+.checks { display: flex; flex-wrap: wrap; gap: var(--s1) var(--s2); }
+.checks label { display: inline-flex; align-items: center; gap: 6px; font-weight: 400; min-height: 44px; }
+.checks input { width: 20px; height: 20px; accent-color: var(--accent); }
+.btn[disabled] { opacity: .45; cursor: not-allowed; }
+.form-note { font-size: 13px; color: var(--muted); }
+
+/* Footer */
+footer { padding-block: var(--s4) var(--s6); font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s1); }
+
+/* Responsive */
+@media (max-width: 860px) {
+  .price-grid { grid-template-columns: 1fr; gap: var(--s4); }
+  .hero-title { font-size: 32px; }
+  .symptoms { grid-template-columns: repeat(2, 1fr); }
+  .examples { grid-template-columns: 1fr; }
+  .promises { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  section { padding-block: var(--s6); }
+  .hero { padding-block: var(--s6); }
+  .hero-title { font-size: 26px; }
+  h2 { font-size: 22px; }
+  .head-nav { display: none; }
+  .symptoms { grid-template-columns: 1fr 1fr; gap: var(--s1); }
+  .symptom { padding: var(--s2); }
+  .p-row { padding: 12px var(--s2); gap: 12px; }
+  .p-row .price { font-size: 22px; }
+  .p-total { padding: var(--s2); }
+  .p-total .t-val { font-size: 32px; }
+  .promise { grid-template-columns: 1fr; padding: var(--s3); gap: var(--s2); }
+  .promise .stamp { text-align: left; }
+  .hero .actions .btn { flex: 1 1 100%; }
+}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <div class="brand">
+      <small class="brand-sub">Repair Factory</small>
+      <strong class="brand-main">Fuji Base</strong>
+    </div>
+    <nav class="head-nav" aria-label="ページ内">
+      <a href="#price">料金表</a>
+      <a href="#flow">ご依頼の流れ</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <h1 class="hero-title">オールドレンズの分解清掃</h1>
+      <p class="hero-sub">カビ・くもり・絞りの油染み・バルサム切れの清掃を承ります。静岡県富士市の工房で、1本ずつ作業します。</p>
+      <dl class="hero-facts">
+        <div><dt>基本料金</dt><dd><span class="num">3,000</span>円<small class="tax">（税込価格3,300円）</small></dd></div>
+        <div><dt>納期の目安</dt><dd><span class="num">2</span>週間</dd></div>
+        <div><dt>お支払い</dt><dd>お受け取り後に銀行振込</dd></div>
+      </dl>
+      <div class="actions">
+        <a class="btn btn-primary" href="#price">料金表を見る</a>
+        <a class="btn btn-ghost" href="#contact">お問い合わせ</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section id="symptoms" aria-labelledby="h-symptoms">
+      <div class="sec-head"><h2 id="h-symptoms">対応する症状</h2></div>
+      <div class="symptoms">
+        <div class="symptom">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="20" cy="20" r="16"/><path d="M14 18c2-3 4-1 5-4M19 14c1 3 4 3 6 2M19 14c-1 4 1 7-1 10M18 24c-2 1-4 0-5 2M18 24c2 1 4 3 4 5" stroke-linecap="round"/></svg>
+          <h3>カビ取り</h3>
+          <p class="add"><span class="num">＋2,000</span>円<small class="tax">（税込価格2,200円）</small></p>
+        </div>
+        <div class="symptom">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="20" cy="20" r="16"/><path d="M10 16h20M8 21h24M11 26h18" stroke-linecap="round" stroke-dasharray="2 3"/></svg>
+          <h3>くもり取り</h3>
+          <p class="sub">汚れによるくもり</p>
+          <p class="add"><span class="num">＋1,000</span>円<small class="tax">（税込価格1,100円）</small></p>
+        </div>
+        <div class="symptom">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="20" cy="20" r="16"/><path d="M20 4l5 11M36 20l-11 5M20 36l-5-11M4 20l11-5" stroke-linecap="round"/><circle cx="20" cy="20" r="5"/></svg>
+          <h3>絞り羽根の油染み</h3>
+          <p class="add"><span class="num">＋2,000</span>円<small class="tax">（税込価格2,200円）</small></p>
+        </div>
+        <div class="symptom">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 5c-6 8-6 22 0 30M16 5c4 8 4 22 0 30M16 5c5 8 5 22 0 30M16 35c8-6 12-12 12-15s-4-9-12-15" stroke-linejoin="round"/></svg>
+          <h3>バルサム切れ</h3>
+          <p class="sub">貼り合わせレンズの貼り直し</p>
+          <p class="add"><span class="num">＋6,000</span>円<small class="tax">（税込価格6,600円）</small></p>
+        </div>
+      </div>
+      <p class="scope-note">MF（手動ピント）のレンズを中心に承ります。AFレンズやズームレンズについても、場所によっては作業できますので、お気軽にお問い合わせください。</p>
+    </section>
+  </div>
+
+  <section id="price" aria-labelledby="h-price">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="h-price">料金表</h2>
+        <span class="always">税別</span>
+      </div>
+      <div class="price-grid">
+        <div>
+          <p class="lead" style="margin-bottom: var(--s2);">該当する症状を選ぶと、料金の目安を表示します。</p>
+          <div class="price-table">
+            <div class="p-row base">
+              <div class="name">基本料金<small>分解・組み立て・清掃</small></div>
+              <span class="always">必ずかかります</span>
+              <div class="price num">3,000<span class="yen">円</span><small class="tax">（税込価格3,300円）</small></div>
+            </div>
+            <label class="p-row" for="opt-kabi">
+              <input type="checkbox" id="opt-kabi" data-price="2000" checked>
+              <div class="name">カビ取り</div>
+              <div class="price num">＋2,000<span class="yen">円</span><small class="tax">（税込価格2,200円）</small></div>
+            </label>
+            <label class="p-row" for="opt-kumori">
+              <input type="checkbox" id="opt-kumori" data-price="1000">
+              <div class="name">汚れによるくもり</div>
+              <div class="price num">＋1,000<span class="yen">円</span><small class="tax">（税込価格1,100円）</small></div>
+            </label>
+            <label class="p-row" for="opt-abura">
+              <input type="checkbox" id="opt-abura" data-price="2000">
+              <div class="name">絞り羽根の油染み</div>
+              <div class="price num">＋2,000<span class="yen">円</span><small class="tax">（税込価格2,200円）</small></div>
+            </label>
+            <label class="p-row" for="opt-balsam">
+              <input type="checkbox" id="opt-balsam" data-price="6000">
+              <div class="name">バルサム切れ<small>貼り合わせレンズの貼り直し</small></div>
+              <div class="price num">＋6,000<span class="yen">円</span><small class="tax">（税込価格6,600円）</small></div>
+            </label>
+            <div class="p-total" aria-live="polite">
+              <div class="t-label">合計（税別）<small id="total-breakdown">基本料金 3,000円 ＋ カビ取り 2,000円</small></div>
+              <div class="t-val num"><span id="total">5,000</span><span class="yen">円</span><small class="tax" id="total-tax">（税込価格5,500円）</small></div>
+            </div>
+          </div>
+          <div class="price-notes">
+            <p>バルサム切れの料金も、基本料金3,000円（税込価格3,300円）に加算します。</p>
+          </div>
+        </div>
+        <div class="others">
+          <h3>送料とお支払い</h3>
+          <dl>
+            <div class="o-row"><dt>送料</dt><dd>工房へは元払いでお送りください。返送料は基本料金に含みます。配送サービスなどをお使いの方には、直接そちらへ配送も可能です</dd></div>
+            <div class="o-row"><dt>お支払い</dt><dd>返送された商品をご確認いただき、ご満足いただけたら銀行振込でお支払いください。</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section id="examples" aria-labelledby="h-examples">
+      <div class="sec-head"><h2 id="h-examples">料金の例</h2></div>
+      <div class="examples">
+        <div class="ex">
+          <p class="what">カビ取り1か所</p>
+          <p class="calc num">3,000 ＋ 2,000</p>
+          <p class="sum num">5,000<span class="yen">円</span><small class="tax">（税込価格5,500円）</small></p>
+        </div>
+        <div class="ex">
+          <p class="what">カビ・くもり・油染みの3つ</p>
+          <p class="calc num">3,000 ＋ 5,000</p>
+          <p class="sum num">8,000<span class="yen">円</span><small class="tax">（税込価格8,800円）</small></p>
+        </div>
+        <div class="ex">
+          <p class="what">バルサム切れ</p>
+          <p class="calc num">3,000 ＋ 6,000</p>
+          <p class="sum num">9,000<span class="yen">円</span><small class="tax">（税込価格9,900円）</small></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="promise" aria-labelledby="h-promise">
+      <h2 id="h-promise" class="promise-title">直らなかった時の料金</h2>
+      <div class="promises">
+        <div class="promise">
+          <div class="stamp">
+            <span class="small">除去できない不具合</span>
+            <span class="num">3,000</span><span class="yen">円だけ</span><small class="tax">（税込価格3,300円）</small>
+          </div>
+          <div>
+            <h3>除去できない不具合だった場合</h3>
+            <p>清掃しても除去できない不具合だった場合は、基本料金3,000円（税込価格3,300円）だけいただきます。</p>
+          </div>
+        </div>
+        <div class="promise">
+          <div class="stamp">
+            <span class="small">分解不可</span>
+            <span class="num">0</span><span class="yen">円</span>
+          </div>
+          <div>
+            <h3>分解不可の場合</h3>
+            <p>料金はいただきません。返送料も当店が負担します。工房への送料だけご負担願います。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow" aria-labelledby="h-flow">
+      <div class="sec-head"><h2 id="h-flow">ご依頼の流れ</h2></div>
+      <ol class="flow">
+        <li><div class="step-body">お問い合わせ<small>レンズの名前と症状をお送りください。状態が分かりにくい時だけ、写真をお願いすることがあります。</small></div></li>
+        <li><div class="step-body">おおよその料金をご連絡</div></li>
+        <li><div class="step-body">レンズを郵送<small>送料元払いでお送りください。商品の梱包ひとつずつに、ご依頼者名とご自身で設定された識別番号を明記してください。</small></div></li>
+        <li><div class="step-body">分解して確認、料金を確定<small>構造が難しいレンズや部位は、1,000円〜（税込価格1,100円〜）の追加をいただく場合があります。金額をご連絡し、ご了承いただいてから作業します。</small></div></li>
+        <li><div class="step-body">作業</div></li>
+        <li><div class="step-body">作業前後の写真と金額をお知らせ</div></li>
+        <li><div class="step-body">作業済みのレンズを返送<small>返送料は基本料金に含みます。</small></div></li>
+        <li><div class="step-body">返送された商品をご確認、ご満足いただけたら銀行振込でお支払い</div></li>
+      </ol>
+      <p class="scope-note">納期の目安 2週間（銘柄によって前後します）</p>
+    </section>
+
+    <section id="about" aria-labelledby="h-about">
+      <div class="sec-head"><h2 id="h-about">作り手について</h2></div>
+        <ul class="facts">
+          <li>静岡県富士市の工房で作業しています。</li>
+          <li>2000年から金属の切削加工の仕事をしています。現場の仕事は30年以上です。</li>
+          <li>バルサム切れの貼り合わせレンズを、熱で剥がして直した実績が十数枚あります。</li>
+          <li>修理の記録をブログ（<a href="https://saizokg.com" target="_blank" rel="noopener">saizo's blog・saizokg.com</a>）に載せています。</li>
+        </ul>
+    </section>
+
+    <section id="faq" aria-labelledby="h-faq">
+      <div class="sec-head"><h2 id="h-faq">よくある質問</h2></div>
+      <div class="faq">
+        <details open>
+          <summary>カビは必ず取れますか？</summary>
+          <p class="ans">表面に付いたカビは清掃で取れます。清掃しても除去できない不具合だった場合は、基本料金3,000円（税込価格3,300円）だけいただきます。</p>
+        </details>
+        <details>
+          <summary>分解できないレンズだった場合は？</summary>
+          <p class="ans">料金はいただきません。返送料も当店が負担します。ご負担は工房への送料だけです。</p>
+        </details>
+        <details>
+          <summary>どれくらいで戻ってきますか？</summary>
+          <p class="ans">お預かりしてから2週間が目安です。銘柄によって前後します。</p>
+        </details>
+        <details>
+          <summary>AFレンズやズームレンズは？</summary>
+          <p class="ans">場所によっては作業できますので、お気軽にお問い合わせください。</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="h-contact">
+      <div class="sec-head"><h2 id="h-contact">お問い合わせ</h2></div>
+      <div class="contact-box">
+        <p>レンズの名前と症状をお送りください。おおよその料金をお返事します。状態が分かりにくい時だけ、写真をお願いすることがあります。</p>
+        <div class="actions" style="margin-top: var(--s3);">
+          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScUuhKUeKBJ65jIhM4GjgB0r3Ki0wV_AEZqC-COJF0WZG9bAg/viewform" target="_blank" rel="noopener">お問い合わせフォームを開く</a>
+        </div>
+        <p class="form-note">Googleフォームが開きます。メール・LINEなど、一般的な連絡媒体であれば対応しますので、媒体名と連絡先をご入力ください。お返事はご入力の連絡先にお送りします。</p>
+      </div>
+    </section>
+
+    <section id="tokushoho" class="legal" aria-labelledby="h-legal">
+      <div class="sec-head"><h2 id="h-legal">特定商取引法に基づく表記</h2></div>
+      <dl>
+        <div class="o-row"><dt>事業者名</dt><dd>Repair Factory Fuji Base</dd></div>
+        <div class="o-row"><dt>運営責任者・所在地・<wbr>電話番号</dt><dd>ご請求があれば、遅滞なくお知らせします（<a href="#contact">お問い合わせ</a>からご連絡ください）。工房は静岡県富士市にあります。</dd></div>
+        <div class="o-row"><dt>料金</dt><dd>上の料金表のとおりです（税別の金額に、税込価格を添えています）。構造が難しいレンズや部位は、1,000円〜（税込価格1,100円〜）の追加をいただく場合があります。分解して確認したあと金額をご連絡し、ご了承いただいてから作業します。</dd></div>
+        <div class="o-row"><dt>料金のほかにかかる費用</dt><dd>工房への送料（元払いでお送りください）と、お振込みの手数料はお客さまのご負担です。返送料は基本料金に含みます。</dd></div>
+        <div class="o-row"><dt>お支払いの時期と方法</dt><dd>作業のあと、作業前後の写真と金額をお知らせし、レンズを返送します。返送された商品をご確認いただき、ご満足いただけたら銀行振込でお支払いください。</dd></div>
+        <div class="o-row"><dt>作業の時期</dt><dd>レンズが届いてから2週間が目安です（銘柄によって前後します）。</dd></div>
+        <div class="o-row"><dt>お申し込みの取りやめ</dt><dd>料金を確定したご連絡のあと、作業に入る前であれば取りやめられます。その場合、作業の料金はかかりませんが、往復の送料はお客さまのご負担となります。</dd></div>
+      </dl>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Repair Factory Fuji Base　静岡県富士市</span>
+    <a href="#tokushoho">特定商取引法に基づく表記</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var boxes = document.querySelectorAll('.price-table input[type="checkbox"]');
+  var totalEl = document.getElementById('total');
+  var bdEl = document.getElementById('total-breakdown');
+  var taxEl = document.getElementById('total-tax');
+  function yen(n) { return n.toLocaleString('ja-JP'); }
+  function update() {
+    var sum = 3000, parts = ['基本料金 3,000円'];
+    boxes.forEach(function (b) {
+      if (b.checked) {
+        var p = Number(b.dataset.price);
+        sum += p;
+        var name = b.parentElement.querySelector('.name').firstChild.textContent.trim();
+        parts.push(name + ' ' + yen(p) + '円');
+      }
+    });
+    totalEl.textContent = yen(sum);
+    taxEl.textContent = '（税込価格' + yen(sum * 11 / 10) + '円）';
+    bdEl.textContent = parts.join(' ＋ ');
+  }
+  boxes.forEach(function (b) { b.addEventListener('change', update); });
+  update();
+})();
+</script>
+</body>
+</html>
