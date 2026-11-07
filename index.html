@@ -211,19 +211,19 @@ img{display:block;max-width:100%;height:auto}
   .over-photo{padding-bottom:0}
   .action-bar{display:none}
 
-  /* 上部の細い帯＋右8割の写真。左の和紙に屋号と縦書きの一言 */
-  .masthead{--head:68px;--hero-h:max(560px,min(calc(100svh - 90px),840px));grid-template-columns:20% 1fr;grid-template-rows:var(--head) var(--hero-h);align-items:stretch}
-  .brand{grid-column:1;grid-row:2;align-self:start;display:block;padding:22px 0 0 40px;background:none}
+  /* 右8割の写真＋その下にメニューの帯。左の和紙に屋号と縦書きの一言 */
+  .masthead{--head:0px;--hero-h:max(560px,min(calc(100svh - 90px),840px));grid-template-columns:20% 1fr;grid-template-rows:var(--hero-h) auto;align-items:stretch}
+  .brand{grid-column:1;grid-row:1;align-self:start;display:block;padding:22px 0 0 40px;background:none}
   .brand-mark{display:block;width:40px;height:40px;margin-bottom:14px;box-shadow:inset 0 0 0 3px var(--ai),inset 0 0 0 4px var(--on-ai),inset 0 0 0 10px var(--ai),inset 0 0 0 11px var(--on-ai)}
   .brand-sub{font-size:13px}
   .brand-main{margin-top:4px;font-size:34px}
-  .site-nav{grid-column:1/-1;grid-row:1;display:flex;align-items:center;justify-content:center;gap:clamp(6px,.9vw,14px);padding:0 40px;font-size:clamp(17px,1.5vw,20px);letter-spacing:.06em}
+  .site-nav{grid-column:1/-1;grid-row:2;min-height:68px;display:flex;align-items:center;justify-content:center;gap:clamp(6px,.9vw,14px);padding:0 40px;font-size:clamp(17px,1.5vw,20px);letter-spacing:.06em}
   .site-nav a{padding:0 clamp(14px,1.6vw,26px)}
   .text-link:hover{color:var(--ai)}
   .hero-photo{left:20%}
   .hero-photo img{object-position:50% 50%}
   .hero-photo .stock-label{left:auto;right:0}
-  .tagline{grid-column:1;grid-row:2;justify-self:end;align-self:end;margin-right:-64px;padding:26px 16px 22px 8px;font-size:clamp(42px,min(5vw,calc((100svh - 270px)/8.8)),68px);line-height:1.22}
+  .tagline{grid-column:1;grid-row:1;justify-self:end;align-self:end;margin-right:-64px;padding:26px 16px 22px 8px;font-size:clamp(42px,min(5vw,calc((100svh - 270px)/8.8)),68px);line-height:1.22}
 
   .sec{padding-top:136px}
   .sec-title{font-size:clamp(36px,3.4vw,48px);margin-bottom:0}
