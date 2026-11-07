@@ -77,10 +77,12 @@ img{display:block;max-width:100%;height:auto}
 .tagline{grid-row:2;grid-column:1;justify-self:end;align-self:end;z-index:2;padding:18px 14px 14px 20px;background:var(--paper) var(--washi);writing-mode:vertical-rl;font-size:32px;font-weight:700;line-height:1.3;letter-spacing:.1em;font-feature-settings:"palt"}
 .tag-line{display:block}
 .tag-line + .tag-line{padding-inline-start:1.1em}
-.site-nav{grid-row:3;position:relative;z-index:1;background:var(--paper) var(--washi);display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;padding:2px var(--gutter-r) 2px calc(var(--gutter-l) - 8px);white-space:nowrap;font-size:14px}
-.site-nav::-webkit-scrollbar{display:none}
-.site-nav a{display:flex;align-items:center;flex:none;min-height:44px;padding:0 8px;text-decoration:none}
-.site-nav a[href="#contact"]{color:var(--ai);font-weight:700}
+/* メニュー：藍の帯。スマホは6項目を3列2段で全部見せる */
+.site-nav{grid-row:3;position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);background:var(--ai);color:var(--on-ai);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px);white-space:nowrap;font-size:15px;font-weight:700;letter-spacing:.02em}
+.site-nav a{display:flex;align-items:center;justify-content:center;min-height:52px;text-decoration:none;box-shadow:inset -1px -1px 0 rgba(247,245,238,.28)}
+.site-nav a[href="#contact"]{background:var(--paper-light);color:var(--ai)}
+.site-nav a:focus-visible{outline-color:var(--on-ai);outline-offset:-4px}
+.site-nav a[href="#contact"]:focus-visible{outline-color:var(--ai)}
 
 /* 区画：箱と罫線をやめて余白で分ける */
 .sec{max-width:calc(var(--max) + 80px);margin:0 auto;padding:84px var(--gutter-r) 0 var(--gutter-l);scroll-margin-top:0}
@@ -210,18 +212,19 @@ img{display:block;max-width:100%;height:auto}
   .action-bar{display:none}
 
   /* 上部の細い帯＋右8割の写真。左の和紙に屋号と縦書きの一言 */
-  .masthead{--head:60px;--hero-h:max(560px,min(calc(100svh - 90px),840px));grid-template-columns:20% 1fr;grid-template-rows:var(--head) var(--hero-h);align-items:stretch}
-  .brand{grid-column:1;grid-row:1/3;align-self:start;display:block;padding:26px 0 0 40px;background:none}
+  .masthead{--head:68px;--hero-h:max(560px,min(calc(100svh - 90px),840px));grid-template-columns:20% 1fr;grid-template-rows:var(--head) var(--hero-h);align-items:stretch}
+  .brand{grid-column:1;grid-row:2;align-self:start;display:block;padding:22px 0 0 40px;background:none}
   .brand-mark{display:block;width:40px;height:40px;margin-bottom:14px;box-shadow:inset 0 0 0 3px var(--ai),inset 0 0 0 4px var(--on-ai),inset 0 0 0 10px var(--ai),inset 0 0 0 11px var(--on-ai)}
   .brand-sub{font-size:13px}
   .brand-main{margin-top:4px;font-size:34px}
-  .site-nav{grid-column:2;grid-row:1;align-items:center;justify-content:flex-end;gap:2px;padding:0 28px 0 0;font-size:15px}
-  .site-nav a{padding:0 10px}
-  .site-nav a:hover,.text-link:hover{color:var(--ai)}
+  .site-nav{grid-column:1/-1;grid-row:1;display:flex;justify-content:center;gap:clamp(4px,1.2vw,20px);padding:0 40px;font-size:clamp(17px,1.5vw,20px);letter-spacing:.06em}
+  .site-nav a{min-height:0;padding:0 clamp(12px,1.6vw,26px);box-shadow:none}
+  .site-nav a:hover{text-decoration:underline;text-underline-offset:6px}
+  .text-link:hover{color:var(--ai)}
   .hero-photo{left:20%}
   .hero-photo img{object-position:50% 50%}
   .hero-photo .stock-label{left:auto;right:0}
-  .tagline{grid-column:1;grid-row:2;justify-self:end;align-self:end;margin-right:-64px;padding:26px 16px 22px 8px;font-size:clamp(46px,5vw,68px);line-height:1.22}
+  .tagline{grid-column:1;grid-row:2;justify-self:end;align-self:end;margin-right:-64px;padding:26px 16px 22px 8px;font-size:clamp(42px,min(5vw,calc((100svh - 270px)/8.8)),68px);line-height:1.22}
 
   .sec{padding-top:136px}
   .sec-title{font-size:clamp(36px,3.4vw,48px);margin-bottom:0}
