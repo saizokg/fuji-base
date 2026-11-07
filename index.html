@@ -34,6 +34,8 @@ gtag('config', 'G-ZRMKYVZ3JV');
   --gutter-l:max(20px,env(safe-area-inset-left,0px));
   --gutter-r:max(20px,env(safe-area-inset-right,0px));
   --bar:48px;
+  --head:52px;
+  --hero-h:min(66svh,560px);
   --max:1200px;
   --washi:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800'%3E%3Cfilter id='a' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.018 .46' numOctaves='3' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .44 0 0 0 0 .36 0 0 0 0 .24 0 0 0 1.6 -.86'/%3E%3C/filter%3E%3Cfilter id='b' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.42 .02' numOctaves='3' seed='23' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .42 0 0 0 0 .28 0 0 0 1.5 -.86'/%3E%3C/filter%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .36 0 0 0 0 .3 0 0 0 0 .2 0 0 0 .6 -.26'/%3E%3C/filter%3E%3Crect width='800' height='800' filter='url(%23a)' opacity='.1'/%3E%3Crect width='800' height='800' filter='url(%23b)' opacity='.045'/%3E%3Crect width='800' height='800' filter='url(%23c)' opacity='.16'/%3E%3C/svg%3E");
   color-scheme:light;
@@ -48,7 +50,9 @@ ul,ol{list-style:none}
 a{color:inherit}
 img{display:block;max-width:100%;height:auto}
 :focus-visible{outline:2px solid var(--ai);outline-offset:2px}
-.page{background:var(--paper) var(--washi);overflow-x:clip;padding-bottom:calc(var(--bar) + env(safe-area-inset-bottom,0px))}
+.page{background:var(--paper) var(--washi);overflow-x:clip}
+/* 本文とフッターは、固定した一番上の写真にかぶさる紙 */
+.over-photo{position:relative;z-index:1;background:var(--paper) var(--washi);padding-bottom:calc(var(--bar) + env(safe-area-inset-bottom,0px))}
 .num{font-variant-numeric:lining-nums tabular-nums;letter-spacing:.02em}
 .tax{font-size:.8125rem;font-weight:500;color:var(--ink-soft);letter-spacing:.02em;white-space:nowrap}
 
@@ -64,15 +68,16 @@ img{display:block;max-width:100%;height:auto}
 .brand-main{display:block;font-size:22px;font-weight:700;letter-spacing:.04em}
 
 /* 最初の画面（幅が狭いとき）：屋号／写真に縦書きの一言／案内 */
-.masthead{display:grid;grid-template-columns:1fr;align-items:center}
-.brand{grid-row:1;padding:8px var(--gutter-r) 8px var(--gutter-l)}
-.hero-photo{grid-row:2;grid-column:1;height:min(66svh,560px)}
+.masthead{position:relative;z-index:1;display:grid;grid-template-columns:1fr;grid-template-rows:var(--head) var(--hero-h) auto;align-items:center}
+.brand{grid-row:1;position:relative;z-index:1;align-self:stretch;padding:8px var(--gutter-r) 8px var(--gutter-l);background:var(--paper) var(--washi)}
+/* 一番上の写真は画面に固定。屋号・見出し・本文だけが流れる */
+.hero-photo{position:fixed;top:0;left:0;right:0;z-index:0;height:calc(var(--head) + var(--hero-h));background:var(--paper) var(--washi)}
 .hero-photo img{position:absolute;inset:0;height:100%;object-fit:cover;object-position:40% 50%;mix-blend-mode:multiply}
 .hero-photo .stock-label{right:auto;left:0}
 .tagline{grid-row:2;grid-column:1;justify-self:end;align-self:end;z-index:2;padding:18px 14px 14px 20px;background:var(--paper) var(--washi);writing-mode:vertical-rl;font-size:32px;font-weight:700;line-height:1.3;letter-spacing:.1em;font-feature-settings:"palt"}
 .tag-line{display:block}
 .tag-line + .tag-line{padding-inline-start:1.1em}
-.site-nav{grid-row:3;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;padding:2px var(--gutter-r) 2px calc(var(--gutter-l) - 8px);white-space:nowrap;font-size:14px}
+.site-nav{grid-row:3;position:relative;z-index:1;background:var(--paper) var(--washi);display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;padding:2px var(--gutter-r) 2px calc(var(--gutter-l) - 8px);white-space:nowrap;font-size:14px}
 .site-nav::-webkit-scrollbar{display:none}
 .site-nav a{display:flex;align-items:center;flex:none;min-height:44px;padding:0 8px;text-decoration:none}
 .site-nav a[href="#contact"]{color:var(--ai);font-weight:700}
@@ -201,19 +206,19 @@ img{display:block;max-width:100%;height:auto}
 @media (min-width:900px){
   :root{--gutter-l:40px;--gutter-r:40px}
   body{font-size:17px}
-  .page{padding-bottom:0}
+  .over-photo{padding-bottom:0}
   .action-bar{display:none}
 
   /* 上部の細い帯＋右8割の写真。左の和紙に屋号と縦書きの一言 */
-  .masthead{grid-template-columns:20% 1fr;grid-template-rows:60px minmax(560px,min(calc(100svh - 90px),840px));align-items:stretch}
-  .brand{grid-column:1;grid-row:1/3;align-self:start;display:block;padding:26px 0 0 40px}
+  .masthead{--head:60px;--hero-h:max(560px,min(calc(100svh - 90px),840px));grid-template-columns:20% 1fr;grid-template-rows:var(--head) var(--hero-h);align-items:stretch}
+  .brand{grid-column:1;grid-row:1/3;align-self:start;display:block;padding:26px 0 0 40px;background:none}
   .brand-mark{display:block;width:40px;height:40px;margin-bottom:14px;box-shadow:inset 0 0 0 3px var(--ai),inset 0 0 0 4px var(--on-ai),inset 0 0 0 10px var(--ai),inset 0 0 0 11px var(--on-ai)}
   .brand-sub{font-size:13px}
   .brand-main{margin-top:4px;font-size:34px}
   .site-nav{grid-column:2;grid-row:1;align-items:center;justify-content:flex-end;gap:2px;padding:0 28px 0 0;font-size:15px}
   .site-nav a{padding:0 10px}
   .site-nav a:hover,.text-link:hover{color:var(--ai)}
-  .hero-photo{grid-column:2;grid-row:2;height:auto;min-height:0}
+  .hero-photo{left:20%}
   .hero-photo img{object-position:50% 50%}
   .hero-photo .stock-label{left:auto;right:0}
   .tagline{grid-column:1;grid-row:2;justify-self:end;align-self:end;margin-right:-64px;padding:26px 16px 22px 8px;font-size:clamp(46px,5vw,68px);line-height:1.22}
@@ -313,6 +318,7 @@ img{display:block;max-width:100%;height:auto}
   <h1 class="tagline"><span class="tag-line">オールドレンズの</span><span class="tag-line">分解清掃</span></h1>
 </header>
 
+<div class="over-photo">
 <main>
   <section id="guide" class="sec" aria-label="ご依頼の条件">
     <div class="guide-sheet">
@@ -529,6 +535,7 @@ img{display:block;max-width:100%;height:auto}
   <p class="foot-stock">「イメージ」と書いた写真は、当工房の作業や品ではありません。</p>
   <p class="foot-stock">アクセス解析にGoogleアナリティクスを使っています。</p>
 </footer>
+</div>
 
 <div class="action-bar">
   <a href="#price">料金表</a>
