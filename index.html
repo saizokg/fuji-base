@@ -78,11 +78,11 @@ img{display:block;max-width:100%;height:auto}
 .tag-line{display:block}
 .tag-line + .tag-line{padding-inline-start:1.1em}
 /* メニュー：藍の帯。スマホは6項目を3列2段で全部見せる */
-.site-nav{grid-row:3;position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);background:var(--ai);color:var(--on-ai);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px);white-space:nowrap;font-size:15px;font-weight:700;letter-spacing:.02em}
-.site-nav a{display:flex;align-items:center;justify-content:center;min-height:52px;text-decoration:none;box-shadow:inset -1px -1px 0 rgba(247,245,238,.28)}
-.site-nav a[href="#contact"]{background:var(--paper-light);color:var(--ai)}
-.site-nav a:focus-visible{outline-color:var(--on-ai);outline-offset:-4px}
-.site-nav a[href="#contact"]:focus-visible{outline-color:var(--ai)}
+.site-nav{grid-row:3;position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--ai);color:var(--on-ai);padding:8px max(8px,env(safe-area-inset-right,0px)) 8px max(8px,env(safe-area-inset-left,0px));white-space:nowrap;font-size:15px;font-weight:700;letter-spacing:.02em}
+.site-nav a{display:flex;align-items:center;justify-content:center;min-height:44px;text-decoration:none;border:1px solid rgba(247,245,238,.7)}
+.site-nav a:active{background:var(--paper-light);color:var(--ai)}
+@media (hover:hover){.site-nav a:hover{background:var(--paper-light);color:var(--ai)}}
+.site-nav a:focus-visible{outline-color:var(--on-ai);outline-offset:2px}
 
 /* 区画：箱と罫線をやめて余白で分ける */
 .sec{max-width:calc(var(--max) + 80px);margin:0 auto;padding:84px var(--gutter-r) 0 var(--gutter-l);scroll-margin-top:0}
@@ -217,9 +217,8 @@ img{display:block;max-width:100%;height:auto}
   .brand-mark{display:block;width:40px;height:40px;margin-bottom:14px;box-shadow:inset 0 0 0 3px var(--ai),inset 0 0 0 4px var(--on-ai),inset 0 0 0 10px var(--ai),inset 0 0 0 11px var(--on-ai)}
   .brand-sub{font-size:13px}
   .brand-main{margin-top:4px;font-size:34px}
-  .site-nav{grid-column:1/-1;grid-row:1;display:flex;justify-content:center;gap:clamp(4px,1.2vw,20px);padding:0 40px;font-size:clamp(17px,1.5vw,20px);letter-spacing:.06em}
-  .site-nav a{min-height:0;padding:0 clamp(12px,1.6vw,26px);box-shadow:none}
-  .site-nav a:hover{text-decoration:underline;text-underline-offset:6px}
+  .site-nav{grid-column:1/-1;grid-row:1;display:flex;align-items:center;justify-content:center;gap:clamp(6px,.9vw,14px);padding:0 40px;font-size:clamp(17px,1.5vw,20px);letter-spacing:.06em}
+  .site-nav a{padding:0 clamp(14px,1.6vw,26px)}
   .text-link:hover{color:var(--ai)}
   .hero-photo{left:20%}
   .hero-photo img{object-position:50% 50%}
