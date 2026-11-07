@@ -78,8 +78,8 @@ img{display:block;max-width:100%;height:auto}
 .tag-line{display:block}
 .tag-line + .tag-line{padding-inline-start:1.1em}
 /* メニュー：藍の帯。スマホは6項目を3列2段で全部見せる */
-.site-nav{grid-row:3;position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--ai);color:var(--on-ai);padding:8px max(8px,env(safe-area-inset-right,0px)) 8px max(8px,env(safe-area-inset-left,0px));white-space:nowrap;font-size:15px;font-weight:700;letter-spacing:.02em}
-.site-nav a{display:flex;align-items:center;justify-content:center;min-height:44px;text-decoration:none;border:1px solid rgba(247,245,238,.7)}
+.site-nav{grid-row:3;position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--ai);color:var(--on-ai);padding:9px max(8px,env(safe-area-inset-right,0px)) 9px max(8px,env(safe-area-inset-left,0px));white-space:nowrap;font-size:clamp(15px,4.25vw,16.5px);font-weight:700;letter-spacing:.02em}
+.site-nav a{display:flex;align-items:center;justify-content:center;min-height:49px;text-decoration:none;border:1px solid rgba(247,245,238,.7)}
 .site-nav a:active{background:var(--paper-light);color:var(--ai)}
 @media (hover:hover){.site-nav a:hover{background:var(--paper-light);color:var(--ai)}}
 .site-nav a:focus-visible{outline-color:var(--on-ai);outline-offset:2px}
@@ -105,8 +105,6 @@ img{display:block;max-width:100%;height:auto}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border:1px solid var(--ai);font-size:16px;font-weight:700;letter-spacing:.06em;text-decoration:none}
 .btn-primary{background:var(--ai);color:var(--on-ai)}
 .btn-primary:hover{background:#17396A}
-.btn-ghost{color:var(--ai)}
-.btn-ghost:hover{background:var(--paper-light)}
 
 /* 一本ずつ：普段の暮らしの写真と短い文 */
 .intro{padding-top:84px}
@@ -217,8 +215,8 @@ img{display:block;max-width:100%;height:auto}
   .brand-mark{display:block;width:40px;height:40px;margin-bottom:14px;box-shadow:inset 0 0 0 3px var(--ai),inset 0 0 0 4px var(--on-ai),inset 0 0 0 10px var(--ai),inset 0 0 0 11px var(--on-ai)}
   .brand-sub{font-size:13px}
   .brand-main{margin-top:4px;font-size:34px}
-  .site-nav{grid-column:1/-1;grid-row:2;min-height:68px;display:flex;align-items:center;justify-content:center;gap:clamp(6px,.9vw,14px);padding:0 40px;font-size:clamp(17px,1.5vw,20px);letter-spacing:.06em}
-  .site-nav a{padding:0 clamp(14px,1.6vw,26px)}
+  .site-nav{grid-column:1/-1;grid-row:2;min-height:86px;display:flex;align-items:center;justify-content:center;gap:clamp(6px,.9vw,14px);padding:0 40px;font-size:clamp(18px,1.875vw,25px);letter-spacing:.06em}
+  .site-nav a{min-height:56px;padding:0 clamp(14px,1.6vw,26px)}
   .text-link:hover{color:var(--ai)}
   .hero-photo{left:20%}
   .hero-photo img{object-position:50% 50%}
@@ -326,10 +324,6 @@ img{display:block;max-width:100%;height:auto}
     <div class="guide-sheet">
       <div>
         <p class="guide-lead">カビ・くもり・絞り羽根の油染みの清掃と、バルサム切れの修理を承ります。</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#price">料金表を見る</a>
-          <a class="btn btn-ghost" href="#contact">お問い合わせ</a>
-        </div>
       </div>
       <dl class="guide-list">
         <div class="guide-item"><dt>基本料金</dt><dd><span class="big num">2,000</span>円 <span class="tax">（税込価格2,200円）</span></dd></div>
